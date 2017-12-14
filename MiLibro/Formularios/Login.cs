@@ -1,4 +1,5 @@
-﻿using MiLibro.Services;
+﻿using MiLibro.Formularios;
+using MiLibro.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,10 @@ namespace MiLibro
             if (ValidationUser(UserName.Text, Password.Text))
             {
                 MessageBox.Show("Login Correcto");
+                Main main = new Main();
+                main.Show();
+                this.Hide();
+                
             }
             else {
                 MessageBox.Show("Usuario o contrasenia incorrecta");
