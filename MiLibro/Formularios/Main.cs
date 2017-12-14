@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiLibro
+namespace MiLibro.Formularios
 {
-    public partial class Login : Form
+    public partial class Main : Form
     {
-        public Login()
+        public Main()
         {
             InitializeComponent();
         }
