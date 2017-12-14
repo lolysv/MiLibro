@@ -90,6 +90,7 @@
             this.BuscarBtn.TabIndex = 5;
             this.BuscarBtn.Text = "Buscar";
             this.BuscarBtn.UseVisualStyleBackColor = true;
+            this.BuscarBtn.Click += new System.EventHandler(this.BuscarBtn_Click);
             // 
             // Empleados
             // 
@@ -103,7 +104,7 @@
             this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.textBox1);
             this.Name = "Empleados";
-            this.Text = "Empleados";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

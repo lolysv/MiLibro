@@ -21,7 +21,7 @@ CREATE TABLE empleados
 	isss VARCHAR(30),
 	telefono INT,
 	area_laboral VARCHAR (80),
-	sueldo_nominal FLOAT,
+	sueldo_nominal DECIMAL(8, 3),
 	estado INT,
 	fecha_registro DATETIME default getdate()
 )
@@ -45,10 +45,12 @@ CREATE TABLE descuentos_barios(
 	fecha_aplicacion DATE,
 	CONSTRAINT fk_descuentos_barios 
 	FOREIGN KEY (id_decuento_tipo) 
-	REFERENCES descuentos_barios_tipos(id),
+	REFERENCES descuentos_barios_tipos(id)
+	ON DELETE CASCADE,
 	CONSTRAINT fk_descuentos_empleado
 	FOREIGN KEY (id_empleado)
 	REFERENCES empleados(id)
+	ON DELETE CASCADE
 )
 
 ----------------------------------------------------
@@ -70,10 +72,12 @@ CREATE TABLE otros_ingresos
 	fecha_aplicacion DATE,
 	CONSTRAINT fk_otros_ingresos_tipo 
 	FOREIGN KEY (id_tipo_ingreso) 
-	REFERENCES otros_ingresos_tipo(id),
+	REFERENCES otros_ingresos_tipo(id)
+	ON DELETE CASCADE,
 	CONSTRAINT fk_otros_ingresos_usuario
 	FOREIGN KEY (id_empleado)
 	REFERENCES empleados(id)
+	ON DELETE CASCADE
 
 )
 
@@ -99,10 +103,12 @@ CREATE TABLE planilla_mensual_detalle(
 	sueldo_liquido FLOAT,
 	CONSTRAINT fk_planilla_mensual_detalle
 	FOREIGN KEY (id_planilla_mensual)
-	REFERENCES planilla_mensual(id),
+	REFERENCES planilla_mensual(id)
+	ON DELETE CASCADE,
 	CONSTRAINT fk_planilla_mensual_detalle_empleado
 	FOREIGN KEY (id_empleado)
 	REFERENCES empleados(id)
+	ON DELETE CASCADE
 )
 
 ------------------------------------------
@@ -122,10 +128,12 @@ CREATE TABLE usuarios(
 	password_usuario VARCHAR(32)
 	CONSTRAINT fk_usuario_empleado
 	FOREIGN KEY (id_empleado)
-	REFERENCES empleados(id),
+	REFERENCES empleados(id)
+	ON DELETE CASCADE,
 	CONSTRAINT fk_usuario_rol
 	FOREIGN KEY (id_rol)
 	REFERENCES rol(id)
+	ON DELETE CASCADE
 )
 
 

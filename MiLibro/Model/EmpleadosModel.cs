@@ -32,17 +32,26 @@ namespace MiLibro.Model
             set { _apellido = value; }
         }
 
-        private string _edad;
+        private int _edad;
 
-        public string Edad
+        public int Edad
         {
             get { return _edad; }
             set { _edad = value; }
         }
 
-        private string _fechaNacimiento;
+        private string _genero;
 
-        public string FechaNacimiento
+        public string Genero
+        {
+            get { return _genero; }
+            set { _genero = value; }
+        }
+
+
+        private DateTime _fechaNacimiento;
+
+        public DateTime FechaNacimiento
         {
             get { return _fechaNacimiento; }
             set { _fechaNacimiento = value; }
@@ -63,6 +72,15 @@ namespace MiLibro.Model
             get { return _nivelAcademico; }
             set { _nivelAcademico = value; }
         }
+
+        private string _dui;
+
+        public string Dui
+        {
+            get { return _dui; }
+            set { _dui = value; }
+        }
+
 
         private string _nit;
 
@@ -104,9 +122,9 @@ namespace MiLibro.Model
             set { _areaLaboral = value; }
         }
 
-        private float _sueldoNominal;
+        private decimal _sueldoNominal;
 
-        public float SueldoNominal
+        public decimal SueldoNominal
         {
             get { return _sueldoNominal; }
             set { _sueldoNominal = value; }

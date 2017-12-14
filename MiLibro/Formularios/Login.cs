@@ -41,6 +41,7 @@ namespace MiLibro
             {
                 if (data.GetString(3) == user && data.GetString(4) == pass)
                 {
+                    data.Close();
                     return true;
                 }
             }
