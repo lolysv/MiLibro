@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MiLibro.Config
 {
-    class Settings
+    public class Settings
     {
-        private static string UrlBase = @"Server=.\sqlexpress;Database=BD_CLINICA;Trusted_Connection=True;";
+        public static string UrlBase = @"Server=.\sqlexpress;Database=db_planilla;Trusted_Connection=True;";
     }
 }

@@ -44,6 +44,7 @@
             this.LoginButton.TabIndex = 0;
             this.LoginButton.Text = "Entrar";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // CloseButton
             // 
