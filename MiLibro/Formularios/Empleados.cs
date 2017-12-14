@@ -18,7 +18,7 @@ namespace MiLibro.Formularios
         public Empleados()
         {
             InitializeComponent();
-            UpdateDataGrid();
+            UpdateDataGrid("SELECT * FROM empleados");
         }
 
         private void AgregarBtn_Click(object sender, EventArgs e)
@@ -34,17 +34,19 @@ namespace MiLibro.Formularios
         private void EliminarBtn_Click(object sender, EventArgs e)
         {
             delete();
+            
         }
 
         private void BuscarBtn_Click(object sender, EventArgs e)
         {
-
+            buscar(idTxt.Text);
         }
 
-        void UpdateDataGrid()
+
+        void UpdateDataGrid(string query)
         {
             List<EmpleadosModel> lista = new List<EmpleadosModel>();
-            SqlDataReader reader = BasicServices.Instance.Read("SELECT * FROM empleados");
+            SqlDataReader reader = BasicServices.Instance.Read(query);
             while (reader.Read())
             {
                 
@@ -78,7 +80,16 @@ namespace MiLibro.Formularios
         {
             int posicion = dataGrid.SelectedCells[0].RowIndex;
             string id = dataGrid.Rows[posicion].Cells[0].Value.ToString();
-            BasicServices.Instance.Delete("DELETE FROM empleados WHERE id = " + id);
+            
+            if (BasicServices.Instance.Delete("DELETE FROM empleados WHERE id = " + id))
+            {
+                UpdateDataGrid("SELECT * FROM empleados");
+            }
+        }
+
+        void buscar(string id)
+        {
+            UpdateDataGrid("SELECT * FROM empleados WHERE id = " + id);
         }
     }
 }

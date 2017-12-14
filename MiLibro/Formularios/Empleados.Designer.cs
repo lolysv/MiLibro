@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.idTxt = new System.Windows.Forms.TextBox();
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.AgregarBtn = new System.Windows.Forms.Button();
             this.ActualizarBtn = new System.Windows.Forms.Button();
@@ -37,12 +37,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // idTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(304, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 20);
-            this.textBox1.TabIndex = 0;
+            this.idTxt.Location = new System.Drawing.Point(304, 14);
+            this.idTxt.Name = "idTxt";
+            this.idTxt.Size = new System.Drawing.Size(238, 20);
+            this.idTxt.TabIndex = 0;
             // 
             // dataGrid
             // 
@@ -102,7 +102,7 @@
             this.Controls.Add(this.ActualizarBtn);
             this.Controls.Add(this.AgregarBtn);
             this.Controls.Add(this.dataGrid);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.idTxt);
             this.Name = "Empleados";
             this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
@@ -113,7 +113,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox idTxt;
         private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.Button AgregarBtn;
         private System.Windows.Forms.Button ActualizarBtn;
